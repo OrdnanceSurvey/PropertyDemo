@@ -58,8 +58,7 @@ var active = {
 			for (i = 0; i < Object.keys(apiObj).length; i++) {
 				ajaxOutput[Object.keys(apiObj)[i]] = [];
 				if (typeof apiObj[Object.keys(apiObj)[i]].endpoint !== "undefined") {
-					https://api2.ordnancesurvey.co.uk/insights/v1/properties/100060719617/listed-buildings/radius?key=yVnhiP8vTfAK91SaUOS38psVzuzgZKVa
-					var url = "https://api2.ordnancesurvey.co.uk/insights/" + apiObj[Object.keys(apiObj)[i]].version + "/properties/" +UPRN + apiObj[Object.keys(apiObj)[i]].endpoint + "?key=" + apikey;
+					var url = apiObj[Object.keys(apiObj)[i]].endpointPrefix + apiObj[Object.keys(apiObj)[i]].version + "/properties/" +UPRN + apiObj[Object.keys(apiObj)[i]].endpoint + "?key=" + apikey;
 					var params = apiObj[Object.keys(apiObj)[i]];
 					header = Object.keys(apiObj)[i];
 					makeCall(url, apiObj, params, header);
@@ -128,6 +127,7 @@ var active = {
 				//Geometry
 				for (key in test) {
 					var type = key;
+					console.log("key = " + key);
 					if (typeof test[key].geometry !== "undefined") {
 						var geoIdent = test[key].geometry.identifier;
 						var projection = test[key].geometry.projection;
@@ -137,6 +137,7 @@ var active = {
 							for (key in storage[index]) {
 								if (key == geoIdent) {
 									console.log("adding feature");
+									//omnivore.wkt.parse(storage[index][key]).addTo(map);
 									//TODO geo overlay
 									//var format = new ol.format.WKT();
 									//var feature = format.readFeature(storage[index][key]);
@@ -221,7 +222,7 @@ var active = {
 							
 							
 							
-		/*					for (i = 0; i < ajaxOutput[key].length; i++) {
+							for (i = 0; i < ajaxOutput[key].length; i++) {
 								if (i < 1) {
 									for (k in ajaxOutput[key][i]) {
 										$('.' + apiObj[key]['div'] + ' .' + k).empty().append(ajaxOutput[key][i][k].toLocaleString());
@@ -235,7 +236,7 @@ var active = {
 
 									}
 								}
-							} */
+							} 
 							$('.' + apiObj[key]['div']).fadeIn();
 						}
 					} 
@@ -290,7 +291,7 @@ var active = {
 	 * 
 	 * 
 	 */
-
+/*
 
 	$("#buildingInfo").click(function() {
 		var building_information = new apiConstructor({
@@ -317,7 +318,7 @@ var active = {
 				panelId: "building_information"
 			}
 		});
-	});
+	}); */
 
 	$("#geoHazards").click(function() {
 		var geoInformation = new apiConstructor({
