@@ -1,0 +1,63 @@
+.blue {
+	background-color: #5C85FF;
+}
+
+.green {
+	background-color: #5CD65C;
+}
+
+.red {
+	background-color: #DB4D4D;
+}
+
+.orange {
+	background-color: #FFB547;
+}
+
+.grey {
+	background-color: #EAEAEA;
+}
+
+.white {
+	background-color: #F7F7F7;
+}
+
+.font-black {
+	color: black;
+}
+
+.white {
+	background:white !important;
+}
+
+.third {
+	height:30%;
+}
+
+.fullHeight {
+	height:100% !important;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+
+.fullWidth {
+	min-width: 100%;
+	margin-left:0 !important;
+	margin-right:0 !important;
+}
+
+.flexBox {
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.widthFill {
+	width:inherit !important;
+}
+
+.eightyP {
+	font-size:0.7rem;
+}
+
