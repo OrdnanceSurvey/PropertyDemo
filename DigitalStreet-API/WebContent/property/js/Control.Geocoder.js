@@ -107,9 +107,10 @@
 		searchInfo: function (uprn) {
 			var building_information = new apiConstructor({
 				building: {
+					endpointPrefix: "https://api2.ordnancesurvey.co.uk/insights/",
 					version: "beta",
 					endpoint: "/dimensions",
-					features: ["calculatedAreaValue", "coordinates"],
+					features: ["buildingFootprint", "coordinates"],
 					div: "building",
 					geometry: {
 						identifier: "coordinates",
@@ -118,10 +119,11 @@
 						projection: 27700
 					}
 				},
-				rail: {
+				property: {
+					endpointPrefix: "https://propertyapi-undominative-homiletics.eu-gb.mybluemix.net/",
 					version: "v1",
-					endpoint: "/title-deeds/lookup",
-					features: ["titleNumber", "DISTANCE"],
+					endpoint: "",
+					features: ["value"],
 					div: "rail"
 				},
 				panelInformation: {
