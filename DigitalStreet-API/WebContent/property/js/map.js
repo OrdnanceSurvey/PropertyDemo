@@ -3,7 +3,7 @@ var OS = new L.TileLayer(
 		{
 			apikey : apikey,
 			tilematrixSet : 'EPSG:27700',
-			layer : 'Road 27700',
+			layer : 'Light 27700',
 			imgFormat : 'png',
 			continuousWorld : true
 		});
@@ -42,10 +42,13 @@ var contents = '<hr>';
 contents += '<ul class="pricing-table" id="building_information" style="display:none;">';
 contents += '	<li class="title" >Building Information</li>';
 contents += '	<div class="building" style="display: none">';
-contents += '		<li class="bullet-item">Area: <span class="calculatedAreaValue"></span></li>';
+contents += '		<li class="bullet-item">Footprint: <span class="buildingFootprint"></span></li>';
 contents += '	</div>';
 contents += '	<div class="rail" style="display: none">';
 contents += '		<li class="bullet-item">Closet Railway: <span class="titleNumber"></span></li>';
+contents += '	</div>';
+contents += '    <div class="property" style="display: none">';
+contents += '		<li class="bullet-item">Value: <span class="value"></span></li>';
 contents += '	</div>';
 contents += '</ul>';
 
